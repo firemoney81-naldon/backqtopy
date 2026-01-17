@@ -6,640 +6,479 @@
 <meta name="google-site-verification" content="v-JCzZe3zFWHcjtfT_a_PxZVfMIVJO5_NTHOhiptov8" />  
 <meta name="naver-site-verification" content="c98079449cd9425b3155ef58b191b64c454407c8" />  
   
-  <title>이사 업계가 숨겨온 바가지 요금 피하는 방법과 검증된 리스트들</title>
+  <title>이사 업계 바가지 요금 피하는 방법과 검증된 리스트들</title>
  
-  
-  
-  <style>
-        /* CSS Reset and Base Styles */
-        body {
-            font-family: 'Arial', 'Noto Sans KR', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f7f9fc; /* Soft background color */
-            color: #333;
-            line-height: 1.6;
+
+    
+    <style>
+        :root {
+            --bg-color: #fdfbf7;
+            --accent-1: #e0c3fc;
+            --accent-2: #8ec5fc;
+            --text-main: #2c3e50;
+            --text-sub: #5d6d7e;
+            --card-bg: #ffffff;
+            --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
         }
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: var(--bg-color);
+            background-image: 
+                radial-gradient(at 0% 0%, hsla(253,16%,7%,0) 0, hsla(253,16%,7%,0) 50%), 
+                radial-gradient(at 50% 0%, hsla(225,39%,30%,0) 0, hsla(225,39%,30%,0) 50%), 
+                radial-gradient(at 100% 0%, hsla(339,49%,30%,0) 0, hsla(339,49%,30%,0) 50%);
+            color: var(--text-main);
+            line-height: 1.7;
+            overflow-x: hidden;
+            padding: 2rem 1rem;
+        }
+
+        /* 부드러운 배경 효과 */
+        .blob {
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            filter: blur(80px);
+            z-index: -1;
+            opacity: 0.4;
+            animation: move 20s infinite alternate;
+        }
+        .blob-1 { top: -10%; left: -10%; background: #ffdee9; }
+        .blob-2 { bottom: -10%; right: -10%; background: #b5fffc; }
+        .blob-3 { top: 40%; left: 40%; background: #e0c3fc; width: 300px; height: 300px; }
+
+        @keyframes move {
+            from { transform: translate(0, 0) scale(1); }
+            to { transform: translate(50px, -50px) scale(1.1); }
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
         }
 
         h1 {
-            color: #2c3e50; /* Darker header color */
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 2.5em;
-            font-weight: 700;
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
         }
 
-        /* Category Section Styling */
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-sub);
+            font-weight: 300;
+        }
+
+        /* 메인 컨테이너 */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* 카테고리 섹션 */
         .category-section {
-            background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
-            margin-bottom: 30px;
-            padding: 30px;
-            border-left: 5px solid #4a90e2; /* Accent color bar */
+            margin-bottom: 5rem;
         }
 
-        h2 {
-            font-size: 1.8em;
-            color: #4a90e2; /* Accent color for category title */
-            border-bottom: 2px solid #e0e6f0;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+        .category-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 5px solid #8ec5fc;
+            color: #333;
+            font-weight: 700;
+            display: inline-block;
         }
 
-        /* Grid Layout for Links */
-        .links-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid columns */
-            gap: 20px;
+        /* Masonry Grid Layout */
+        .masonry-grid {
+            column-count: 3;
+            column-gap: 2rem;
         }
 
-        /* Individual Link Card Styling */
-        .link-card {
-            background-color: #ffffff;
-            border: 1px solid #e0e6f0;
-            border-radius: 10px;
-            padding: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 100%;
+        @media (max-width: 1024px) {
+            .masonry-grid { column-count: 2; }
+        }
+        @media (max-width: 768px) {
+            .masonry-grid { column-count: 1; }
+            h1 { font-size: 2rem; }
         }
 
-        .link-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            border-color: #4a90e2;
+        /* 카드 디자인 */
+        .card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            break-inside: avoid;
+            box-shadow: var(--shadow);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.5);
+            backdrop-filter: blur(5px);
         }
 
-        .link-title {
-            font-size: 1.2em;
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+        }
+
+        .card-tag {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: #f0f4f8;
+            color: #5d6d7e;
+            border-radius: 50px;
+            font-size: 0.8rem;
             font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
             color: #2c3e50;
-            margin-bottom: 10px;
-            text-decoration: none; /* Remove underline from default link style */
-            display: block;
+            word-break: keep-all;
         }
 
-        .link-description {
-            font-size: 0.9em;
-            color: #6c7a89;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        /* New Tab Link Styling (for the entire card content) */
-        .link-card-content {
+        /* 링크 스타일 (설명글 전체) */
+        .card-link {
             text-decoration: none;
             color: inherit;
             display: block;
         }
 
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px 10px;
-            }
-            h1 {
-                font-size: 2em;
-            }
-            h2 {
-                font-size: 1.5em;
-            }
-            .links-grid {
-                grid-template-columns: 1fr; /* Single column on smaller screens */
-            }
+        .card-desc {
+            font-size: 0.95rem;
+            color: #555;
+            text-align: justify;
+            word-break: break-all;
+            white-space: pre-line; /* 줄바꿈 허용 */
+            position: relative;
+            padding: 1rem;
+            background-color: rgba(240, 244, 248, 0.3);
+            border-radius: 10px;
+            transition: background-color 0.3s;
         }
+        
+        .card-link:hover .card-desc {
+            background-color: rgba(224, 195, 252, 0.1);
+            color: #000;
+        }
+
+        .read-more {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #667eea;
+            text-align: right;
+            display: block;
+        }
+
+        .deco-icon {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            font-size: 8rem;
+            opacity: 0.05;
+            z-index: 0;
+            pointer-events: none;
+        }
+
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1>이사 업계가 숨겨온 바가지 요금 피하는 방법과 검증된 리스트들</h1>
+    <!-- 배경 장식 -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
 
-        <!-- Category 1: 이사 종류별 가이드 (포장, 보관, 일반) -->
-        <div class="category-section">
-            <h2>🏡 이사 종류별 가이드: 포장, 보관, 일반이사 완벽 분석</h2>
-            <div class="links-grid">
-                <!-- Links related to move types -->
-                <a class="link-card-content" href="https://movinggkindx.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">이사 종류</span>
-                        <p class="link-description">이사 종류별 특징과 장단점을 한눈에 비교하여 나에게 맞는 이사 방식을 찾아보세요. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movingikindf.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">포장이삿짐센터</span>
-                        <p class="link-description">바쁜 현대인을 위한 토탈 솔루션, 포장이사 전문 업체의 A부터 Z까지, 성공적인 이사를 위한 가이드입니다. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movingkkindz.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">포장보관이사</span>
-                        <p class="link-description">포장이사와 보관 서비스를 동시에 제공하는 전문업체 정보. 이사 후 장기간 보관이 필요할 때 최적의 선택지입니다. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movinggkindw.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">컨테이너이삿짐보관비용</span>
-                        <p class="link-description">안전한 컨테이너 보관 이사, 비용 견적을 투명하게 공개하고 보관 기간별 최적의 가격을 확인하세요. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movingikindv.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">일반이사비용</span>
-                        <p class="link-description">셀프 이사를 선호하는 분들을 위한 일반 이사 가이드. 비용 절감 노하우와 주의사항을 확인하세요. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movinglkindb.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">부분이사</span>
-                        <p class="link-description">가구 몇 개만 옮길 때, 이사 비용을 절약할 수 있는 부분 이사 서비스에 대한 상세 정보를 안내합니다. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movingikinds.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">반포장이사후기</span>
-                        <p class="link-description">반포장 이사를 경험한 고객들의 생생한 후기 모음. 합리적인 가격과 편리함의 균형점을 찾아보세요. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movingkkindr.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">반포장이사준비</span>
-                        <p class="link-description">반포장 이사를 준비하는 분들을 위한 체크리스트. 이사 전후 과정에서 놓치지 말아야 할 것들을 정리했습니다. [자세히 알아보기]</p>
-                    </div>
-                </a>
-            </div>
-        </div>
+    <header>
+        <h1>이사 업계 바가지 요금 피하는 방법과 검증된 리스트들</h1>
+        <p class="subtitle">새로운 공간으로의 특별한 이동, 당신을 위한 맞춤형 큐레이션</p>
+    </header>
 
-        <!-- Category 2: 이사 비용 및 견적 비교 (아파트, 톤별, 평형별) -->
-        <div class="category-section">
-            <h2>💰 이사 비용 & 견적: 5톤/평형별 가격 비교 및 지원 서비스</h2>
-            <div class="links-grid">
-                <!-- Links related to costs -->
-                <a class="link-card-content" href="https://movinghkinde.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">아파트이사비용</span>
-                        <p class="link-description">평수와 층수에 따른 아파트 이사 비용 분석. 합리적인 견적을 위한 필수 정보를 제공합니다. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movinggkindb.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">5톤포장이사비용</span>
-                        <p class="link-description">가장 보편적인 5톤 포장이사 기준 비용 공개. 추가 비용 발생 없는 투명한 견적을 위한 팁. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movinggkindh.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">32평이사비용</span>
-                        <p class="link-description">32평 아파트 이사를 위한 정확한 비용 산출 가이드. 이사 경험자의 꼼꼼한 체크리스트. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movinggkindd.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">30평대이사비용</span>
-                        <p class="link-description">30평대 이사 시 변동되는 가격 요인을 분석하고, 가성비 좋은 업체를 찾는 노하우를 공유합니다. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movingikindw.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">24평포장이사비용</span>
-                        <p class="link-description">신혼부부에게 인기 있는 24평 이사 비용 견적. 짐량에 따른 합리적인 가격대를 확인하세요. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movinggkindg.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">이사견적어플</span>
-                        <p class="link-description">복잡한 견적 과정을 간편하게! 이사 견적 비교 앱을 활용해 스마트하게 이사 비용을 절약하세요. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movinggkinda.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">이사비용지원</span>
-                        <p class="link-description">이사 비용 부담을 덜어주는 다양한 지원 프로그램 및 혜택 정보를 모았습니다. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movinglkindd.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">포장이사카드결제</span>
-                        <p class="link-description">이사 비용, 현금이 아닌 카드로 결제하고 싶은 분들을 위한 정보. 카드사별 혜택과 수수료를 확인하세요. [자세히 알아보기]</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-        <!-- Category 3: 소형 이사 & 용달 서비스 (원룸, 투룸, 짐 보관) -->
-        <div class="category-section">
-            <h2>🚚 소형 이사 & 용달: 원룸, 투룸, 짐 보관 특화 서비스</h2>
-            <div class="links-grid">
-                <!-- Links related to small moves and storage -->
-                <a class="link-card-content" href="https://movingikindd.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">원룸포장이사가격</span>
-                        <p class="link-description">1인 가구의 현명한 선택, 원룸 포장이사의 합리적인 가격대와 서비스 범위를 안내합니다. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movinghkindx.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">원룸이사용달</span>
-                        <p class="link-description">짐이 적은 원룸 이사에 최적화된 용달 서비스. 빠르고 간편한 이사 방식을 제안합니다. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movingjkindp.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">원룸이사견적</span>
-                        <p class="link-description">원룸 이사 시 짐량에 따른 정확한 견적 산출 방법. 숨겨진 추가 비용을 방지하는 노하우. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movingjkinde.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">투룸포장이사비용</span>
-                        <p class="link-description">투룸 이사를 위한 포장이사 비용 가이드. 1~2인 가구의 짐량에 맞춘 최적화된 견적 정보를 확인하세요. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movinghkinde.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">이삿짐보관가격</span>
-                        <p class="link-description">장기간 이삿짐 보관이 필요할 때, 보관 창고의 종류별 가격 비교를 통해 합리적인 선택을 도와드립니다. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movinghkindf.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">보관이사가격</span>
-                        <p class="link-description">이사 날짜가 맞지 않을 때 필요한 보관 이사 서비스. 서비스 내용별 가격을 상세히 비교합니다. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movingjkindo.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">짐보관이사</span>
-                        <p class="link-description">짐 보관과 이사를 결합한 통합 서비스. 이사 과정의 번거로움을 최소화하는 실용적인 정보를 확인하세요. [자세히 알아보기]</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-        <!-- Category 4: 서울 및 수도권 이사 전문 업체 (강남, 도봉구, 성남 등) -->
-        <div class="category-section">
-            <h2>🏙️ 서울/수도권 이사: 강남, 성남, 안양 등 지역 전문업체</h2>
-            <div class="links-grid">
-                <!-- Links related to Seoul/Capital area -->
-                <a class="link-card-content" href="https://movingikindb.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">서울포장이사</span>
-                        <p class="link-description">복잡한 서울 도심 이사 전문가. 맞춤형 포장 이사 서비스를 통해 완벽한 이사를 경험하세요. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movinggkindo.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">강남포장이사</span>
-                        <p class="link-description">강남 지역 특화 이사 서비스. 고급 주택 및 아파트에 최적화된 프리미엄 이사를 소개합니다. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movinghkinda.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">강남이삿짐센터</span>
-                        <p class="link-description">까다로운 강남 이사 규정에 밝은 전문 센터. 신뢰도 높은 업체 리스트를 확인하세요. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movingikindz.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">도봉구포장이사</span>
-                        <p class="link-description">도봉구 지역 주민을 위한 포장이사 업체 추천. 지역 밀착형 서비스를 제공하는 곳을 모았습니다. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movinggkindp.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">안양포장이사</span>
-                        <p class="link-description">안양 지역 내 포장이사 서비스 비교. 합리적인 가격과 높은 만족도의 업체 정보. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movinghkinds.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">강동구이사</span>
-                        <p class="link-description">강동구 아파트 이사 전문 업체 리스트. 이사 후기 기반의 믿을 수 있는 정보를 제공합니다. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movinghkindh.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">성남이삿짐센터</span>
-                        <p class="link-description">성남시 이사 경험자들의 추천을 받은 이삿짐센터. 정확한 견적과 친절한 서비스로 유명한 업체. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movinghkindj.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">서울이사</span>
-                        <p class="link-description">서울 전역 이사 서비스 가이드. 서울의 25개 구별 특화된 이사 정보를 만나보세요. [자세히 알아보기]</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-        <!-- Category 5: 부산/경남 지역 이사 솔루션 (해운대, 창원, 양산 등) -->
-        <div class="category-section">
-            <h2>⚓ 부산/경남 이사: 해운대, 창원, 양산 등 지역 밀착 정보</h2>
-            <div class="links-grid">
-                <!-- Links related to Busan/Gyeongnam area -->
-                <a class="link-card-content" href="https://movinghkindb.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">부산이사</span>
-                        <p class="link-description">부산 이사 토탈 솔루션. 해운대, 동래, 사하구 등 부산 전역의 이사 전문가를 소개합니다. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movingikindc.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">부산용달비용</span>
-                        <p class="link-description">부산 지역 용달 이사 비용 분석. 소형 이사부터 짐 일부 운반까지 합리적인 가격을 제시합니다. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movingkkindp.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">부산이사업체추천</span>
-                        <p class="link-description">부산 이사 경험자들이 강력 추천하는 업체 리스트. '내돈내산' 후기를 바탕으로 엄선했습니다. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movingkkindo.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">부산사무실이사</span>
-                        <p class="link-description">기업의 성공적인 이전 파트너, 부산 사무실 이사 전문 업체. 기기 이전부터 정리까지 완벽 지원. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movinghkindd.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">해운대이사업체</span>
-                        <p class="link-description">해운대구 최고급 아파트 및 오피스텔 이사 전문. 특화된 프리미엄 서비스를 경험하세요. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movinghkindp.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">해운대구이사</span>
-                        <p class="link-description">해운대구 이사를 위한 상세 가이드. 이사 전 체크리스트와 추천 업체 정보를 제공합니다. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movingfkindu.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">창원이사업체</span>
-                        <p class="link-description">창원 지역 주민이 인정한 이사업체 순위. 견적 비교와 고객 후기를 통한 신뢰도 높은 업체 선정법. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movingfkindw.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">양산이삿짐센터</span>
-                        <p class="link-description">양산 신도시 이사 전문. 꼼꼼한 포장과 안전한 운송으로 이사 만족도를 높여드립니다. [자세히 알아보기]</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-        <!-- Category 6: 중부 및 호남권 이사 서비스 (세종, 대전, 전주 등) -->
-        <div class="category-section">
-            <h2>🌍 중부/호남권 이사: 세종, 대전, 전주 등 주요 도시 전문가</h2>
-            <div class="links-grid">
-                <!-- Links related to other major cities -->
-                <a class="link-card-content" href="https://movinggkindy.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">세종이사</span>
-                        <p class="link-description">계획 이주가 많은 세종시 이사 전문. 신규 아파트 이사 시 고려해야 할 사항을 안내합니다. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movingjkindz.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">전주보관이사</span>
-                        <p class="link-description">전주 지역 보관 이사 전문가. 이사 기간이 겹치는 경우, 안전하게 짐을 보관해 드립니다. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movingkkinda.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">대전이사짐센터</span>
-                        <p class="link-description">대전 이사짐센터 가격 비교와 서비스 후기. 지역별 특성에 맞는 업체 선택 팁. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movingfkindx.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">전주이사업체</span>
-                        <p class="link-description">전주 지역 포장이사 전문. 꼼꼼하고 친절한 서비스로 전주 이사를 편안하게 만들어 드립니다. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movingjkindd.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">전주원룸이사</span>
-                        <p class="link-description">전주 1인 가구 원룸 이사 최저가 견적. 불필요한 비용을 줄이고 스마트하게 이사하세요. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movingjkindb.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">목포포장이사</span>
-                        <p class="link-description">목포 지역 포장이사 업체 순위와 후기. 신속하고 안전한 이사를 위한 검증된 업체 정보. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movinghkindi.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">안동이사</span>
-                        <p class="link-description">안동 지역 특화 이사 서비스. 안동의 지리적 특성을 고려한 맞춤형 이사를 경험하세요. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movingjkindm.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">김천이사</span>
-                        <p class="link-description">김천혁신도시 이사 전문 업체 정보. 빠르고 정확한 이사 서비스를 제공합니다. [자세히 알아보기]</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-        <!-- Category 7: 이사 준비 체크리스트 및 꿀팁 (절차, 정리) -->
-        <div class="category-section">
-            <h2>📝 이사 준비 체크리스트 및 꿀팁: 완벽한 이사를 위한 노하우</h2>
-            <div class="links-grid">
-                <!-- Links related to preparation and tips -->
-                <a class="link-card-content" href="https://movinggkindf.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">이사순서</span>
-                        <p class="link-description">이사 전후 복잡한 절차를 한눈에 정리한 이사 순서 가이드. 놓치는 것 없이 완벽하게 준비하세요. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movinggkindr.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">이사할때체크리스트</span>
-                        <p class="link-description">성공적인 이사를 위한 필수 체크리스트. 이사 1달 전부터 당일까지 상세한 준비 과정을 안내합니다. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movingjkindi.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">이사정리업체</span>
-                        <p class="link-description">이사 후 정리정돈이 막막할 때. 전문 정리 업체를 통해 빠르고 쾌적하게 새집을 정리하세요. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movingkkindg.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">포장이사청소</span>
-                        <p class="link-description">이사 당일 포장과 청소를 동시에 해결! 이사 청소 서비스를 통해 입주 청소 걱정을 덜어드립니다. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movinggkindt.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">셀프이사</span>
-                        <p class="link-description">가성비 높은 셀프 이사를 위한 노하우. 준비물부터 운송까지, 혼자서도 완벽하게 이사하는 방법을 공유합니다. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movingkkindy.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">이사예약</span>
-                        <p class="link-description">성수기 이사 예약 노하우. 붐비는 날짜에도 원하는 시간에 이사하는 비법을 공개합니다. [자세히 알아보기]</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-        <!-- Category 8: 이사 후기 및 업체 추천 -->
-        <div class="category-section">
-            <h2>⭐ 이사 후기 및 추천: 실제 고객 후기 기반 업체 비교</h2>
-            <div class="links-grid">
-                <!-- Links related to reviews and recommendations -->
-                <a class="link-card-content" href="https://movingfkindp.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">포장이사후기</span>
-                        <p class="link-description">생생한 '내돈내산' 포장이사 후기 모음. 이사 업체를 선정하기 전 반드시 확인해야 할 실제 경험담입니다. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movinggkindu.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">포장이사업체추천</span>
-                        <p class="link-description">전문가가 추천하는 포장이사업체 리스트. 서비스 품질, 가격, 고객 만족도 기준 비교 분석. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movinghkindw.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">보관이사 후기 내돈내산 전국 전문업체 공유</span>
-                        <p class="link-description">보관 이사를 경험한 고객들의 솔직한 후기. 전국 보관이사 전문 업체들의 장단점을 낱낱이 파헤칩니다. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movingikindm.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">이사업체비교</span>
-                        <p class="link-description">이사 업체 견적 비교 사이트 추천. 여러 업체의 견적을 동시에 받아보고 현명하게 선택하는 방법. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movingikindn.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">이사업체견적</span>
-                        <p class="link-description">이사 견적을 받을 때 꼭 확인해야 할 항목. 숨겨진 비용 없이 투명한 견적을 받는 노하우. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movinghkindn.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">이삿짐센터가격비교</span>
-                        <p class="link-description">이삿짐센터 가격을 비교하는 가장 스마트한 방법. 불필요한 거품을 빼고 합리적인 가격을 찾아드립니다. [자세히 알아보기]</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-        <!-- Category 9: 지역별 상세 이사 정보 (광주, 대구, 인천 등) -->
-        <div class="category-section">
-            <h2>🗺️ 지역별 상세 이사: 광주, 대구, 인천 등 주요 거점 도시</h2>
-            <div class="links-grid">
-                <!-- Links related to other specific cities/regions -->
-                <a class="link-card-content" href="https://movingjkindu.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">광주포장이사업체</span>
-                        <p class="link-description">광주광역시 포장이사 전문. 꼼꼼한 서비스로 이사 만족도를 높이는 업체 리스트를 공개합니다. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movingkkindt.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">대구포장이사추천</span>
-                        <p class="link-description">대구 지역 이사 업체 추천. 실시간 후기 기반의 믿을 수 있는 업체를 엄선했습니다. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movinghkindq.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">대구사무실이사</span>
-                        <p class="link-description">대구 사무실 이사 전문가. 기업 이전 시 복잡한 서류 및 집기 운반을 안전하게 처리합니다. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movingkkindh.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">인천이사청소</span>
-                        <p class="link-description">이사 후 새집 청소는 필수! 인천 지역 전문 이사 청소 업체 정보를 모았습니다. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movinghkindt.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">광명포장이사</span>
-                        <p class="link-description">광명시 이사 전문 업체. 지역 특성에 맞는 맞춤형 이사 솔루션을 제공합니다. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movinghkinde.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">문정동이사</span>
-                        <p class="link-description">문정동 아파트 및 오피스텔 이사 가이드. 해당 지역에서 검증된 이사 업체를 소개합니다. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movinghkindr.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">목포이사</span>
-                        <p class="link-description">목포 지역 이사 정보. 해안가 지역 특성을 고려한 안전한 이사 서비스를 제공합니다. [자세히 알아보기]</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-        <!-- Category 10: 기타 이사 관련 서비스 및 정보 -->
-        <div class="category-section">
-            <h2>🛠️ 이사 부대 서비스 및 기타 정보: 청소, 사다리차, 장기보관</h2>
-            <div class="links-grid">
-                <!-- Links related to extra services -->
-                <a class="link-card-content" href="https://movingikinda.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">대전이사청소</span>
-                        <p class="link-description">이사 후 깨끗한 새집 입주를 위한 대전 이사 청소 서비스. 쾌적한 환경을 만들어 드립니다. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movingikindg.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">이사사다리차</span>
-                        <p class="link-description">높은 층 이사에 필수적인 사다리차 서비스. 안전하고 신속한 이사를 위한 사다리차 비용 정보를 확인하세요. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movinghkinde.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">이사보관비용</span>
-                        <p class="link-description">단기 및 장기 이사 짐 보관 비용을 비교 분석. 안전하고 저렴한 보관 창고를 찾아보세요. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movinghkindl.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">이삿짐보관창고</span>
-                        <p class="link-description">이삿짐 보관 창고 선택 시 고려 사항. 쾌적한 환경의 전문 보관 시설을 추천합니다. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movingjkindy.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">이삿짐장기보관비용</span>
-                        <p class="link-description">해외 이주나 인테리어 시 필요한 장기 보관. 합리적인 가격으로 짐을 안전하게 맡기세요. [자세히 알아보기]</p>
-                    </div>
-                </a>
-                <a class="link-card-content" href="https://movingjkindg.withusgoat.com" target="_blank">
-                    <div class="link-card">
-                        <span class="link-title">주말이사비용</span>
-                        <p class="link-description">주말 이사 시 할증 요금 정보. 주말 이사 비용 절감 팁과 예약 노하우를 공개합니다. [자세히 알아보기]</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-
+    <div id="app" class="container">
+        <!-- 자바스크립트로 콘텐츠가 여기에 로드됩니다 -->
     </div>
 
+    <script>
+        // 1. 데이터 정의 (카테고리 매핑 포함)
+        const rawData = [
+            { k: "양주시포장이사", u: "https://movingjkinds.withusgoat.com", c: "regional" },
+            { k: "진해이사", u: "https://movingjkindt.withusgoat.com", c: "regional" },
+            { k: "광주포장이사업체", u: "https://movingjkindu.withusgoat.com", c: "regional" },
+            { k: "안동포장이사", u: "https://movingjkindv.withusgoat.com", c: "regional" },
+            { k: "25평포장이사비용", u: "https://movingjkindw.withusgoat.com", c: "cost" },
+            { k: "경산이사", u: "https://movingjkindx.withusgoat.com", c: "regional" },
+            { k: "이삿짐장기보관비용", u: "https://movingjkindy.withusgoat.com", c: "cost" },
+            { k: "전주보관이사", u: "https://movingjkindz.withusgoat.com", c: "regional" },
+            { k: "대전이사짐센터", u: "https://movingkkinda.withusgoat.com", c: "regional" },
+            { k: "부산이삿짐보관", u: "https://movingkkindb.withusgoat.com", c: "service" },
+            { k: "해운대이삿짐센터", u: "https://movingkkindc.withusgoat.com", c: "regional" },
+            { k: "서울부산이사비용", u: "https://movingkkindd.withusgoat.com", c: "cost" },
+            { k: "이사가격", u: "https://movingkkinde.withusgoat.com", c: "cost" },
+            { k: "안중포장이사", u: "https://movingkkindf.withusgoat.com", c: "regional" },
+            { k: "포장이사청소", u: "https://movingkkindg.withusgoat.com", c: "service" },
+            { k: "인천이사청소", u: "https://movingkkindh.withusgoat.com", c: "service" },
+            { k: "오피스텔이사", u: "https://movingkkindi.withusgoat.com", c: "type" },
+            { k: "프리미엄이사", u: "https://movingkkindj.withusgoat.com", c: "type" },
+            { k: "대치동이사", u: "https://movingkkindk.withusgoat.com", c: "regional" },
+            { k: "제주이사업체", u: "https://movingkkindl.withusgoat.com", c: "regional" },
+            { k: "군산포장이사", u: "https://movingkkindm.withusgoat.com", c: "regional" },
+            { k: "아파트이사", u: "https://movingkkindn.withusgoat.com", c: "type" },
+            { k: "부산사무실이사", u: "https://movingkkindo.withusgoat.com", c: "type" },
+            { k: "부산이사업체추천", u: "https://movingkkindp.withusgoat.com", c: "regional" },
+            { k: "이천이삿짐센터", u: "https://movingkkindq.withusgoat.com", c: "regional" },
+            { k: "반포장이사준비", u: "https://movingkkindr.withusgoat.com", c: "info" },
+            { k: "포장이사짐센터", u: "https://movingkkinds.withusgoat.com", c: "info" },
+            { k: "대구포장이사추천", u: "https://movingkkindt.withusgoat.com", c: "regional" },
+            { k: "광산구이삿짐센터", u: "https://movingkkindu.withusgoat.com", c: "regional" },
+            { k: "반포장이사가격", u: "https://movingkkindv.withusgoat.com", c: "cost" },
+            { k: "이사꿀팁", u: "https://movingkkindw.withusgoat.com", c: "info" },
+            { k: "안성포장이사", u: "https://movingkkindx.withusgoat.com", c: "regional" },
+            { k: "이사예약", u: "https://movingkkindy.withusgoat.com", c: "info" },
+            { k: "포장보관이사", u: "https://movingkkindz.withusgoat.com", c: "service" },
+            { k: "5톤보관이사비용", u: "https://movinglkinda.withusgoat.com", c: "cost" },
+            { k: "부분이사", u: "https://movinglkindb.withusgoat.com", c: "type" }
+        ];
+
+        const categoryNames = {
+            regional: "🌏 지역별 프리미엄 네트워크",
+            cost: "💰 합리적인 견적 & 비용 분석",
+            type: "🏢 주거 형태별 맞춤 이사",
+            service: "✨ 청소 및 특화 서비스",
+            info: "💡 이사 준비의 모든 노하우"
+        };
+
+        // 2. 텍스트 생성기 (500~1000자를 위한 문장 조합 로직)
+        const textGenerator = {
+            intros: [
+                "이사는 단순히 짐을 옮기는 행위가 아닙니다. 그것은 당신의 소중한 추억과 다가올 미래를 잇는 중요한 여정입니다.",
+                "새로운 공간에서의 시작, 그 설렘을 온전히 느끼실 수 있도록 가장 완벽한 이사 서비스를 제안합니다.",
+                "복잡하고 머리 아픈 이사 준비, 이제 전문가의 손길을 통해 예술 같은 편안함으로 변화시켜 보세요.",
+                "당신의 라이프스타일을 존중하며, 물건 하나하나에 깃든 가치를 이해하는 프리미엄 이사 솔루션입니다.",
+                "공간을 이동한다는 것은 삶의 질을 한 단계 높이는 과정이어야 합니다. 격이 다른 서비스를 경험해보세요."
+            ],
+            bodies: [
+                "저희는 수년간 축적된 현장 노하우와 체계적인 매뉴얼을 바탕으로 고객님의 소중한 자산을 안전하게 보호합니다. 특히 깨지기 쉬운 그릇이나 고가의 가전제품은 특수 포장재를 사용하여 이중, 삼중으로 완벽하게 패킹하며, 바닥과 벽면 보강 작업 또한 철저히 진행하여 스크래치 없는 완벽한 이사를 보장합니다. ",
+                "비용 때문에 고민하시는 분들을 위해 투명한 견적 시스템을 도입했습니다. 불필요한 거품을 걷어내고, 꼭 필요한 서비스만을 담아 합리적인 가격을 제시합니다. 방문 견적부터 마무리 청소까지, 추가 비용 요구 없는 정직한 서비스를 약속드리며, 고객님의 예산에 맞춘 최적의 플랜을 컨설팅해 드립니다. ",
+                "단순 운송을 넘어 정리 정돈의 미학을 실천합니다. 이사가 끝난 후 옷장 정리, 주방 수납, 그리고 냉장고 살균 청소까지 도와드려 고객님께서 손댈 곳 없이 바로 일상 생활이 가능하도록 케어해 드립니다. 전문 교육을 이수한 베테랑 팀원들이 손발을 맞춰 신속하고 정확하게 움직입니다. ",
+                "시간이 금인 현대인들을 위해 맞춤형 스케줄링을 제공합니다. 원하시는 시간대에 맞춰 정확하게 도착하고 약속된 시간에 마무리를 짓습니다. 또한 혹시 모를 사고에 대비하여 적재물 배상 책임 보험에 가입되어 있어, 만약의 사태에도 100% 안전하게 보상받으실 수 있는 신뢰할 수 있는 시스템을 갖추고 있습니다. "
+            ],
+            details: [
+                "특히 지금 보고 계신 링크에서는 다른 곳에서는 찾아볼 수 없는 특별한 혜택과 상세한 정보를 확인하실 수 있습니다. 5톤 트럭부터 사다리차 배치, 그리고 입주 청소 연계 서비스까지 원스톱으로 해결 가능한 솔루션을 만나보세요. ",
+                "오피스텔, 아파트, 빌라 등 주거 형태에 따른 특성을 완벽하게 파악하고 있으며, 좁은 골목이나 고층 작업 등 난이도 높은 현장에서도 탁월한 해결 능력을 보여줍니다. 고객님의 후기가 증명하는 만족도 높은 서비스를 직접 확인해 보시길 바랍니다. ",
+                "보관 이사가 필요하신가요? 항온, 항습이 유지되는 최첨단 전용 컨테이너에 고객님의 짐을 안전하게 보관해 드립니다. 장기 보관 시 발생할 수 있는 곰팡이나 파손 걱정 없이, 처음 맡긴 상태 그대로 돌려드리는 안심 보관 서비스를 상세 페이지에서 확인하세요. ",
+                "이사 전 체크리스트 제공부터 공과금 정산 요령, 그리고 이사 후 전입신고 팁까지. 이사의 A부터 Z까지 모든 과정을 꼼꼼하게 챙겨드립니다. 혼자 준비하기 막막했던 부분들을 전문가의 조언을 통해 시원하게 해결하실 수 있습니다. "
+            ],
+            outros: [
+                "이제 더 이상 이사로 인해 스트레스 받지 마세요. 당신의 새로운 출발이 행복으로만 가득 찰 수 있도록 최고의 파트너가 되어드리겠습니다. 지금 바로 클릭하여 상세 내용을 확인하고 품격 있는 서비스를 예약하세요.",
+                "완벽함의 차이는 디테일에서 나옵니다. 보이지 않는 곳까지 세심하게 배려하는 서비스, 지금 이 링크를 통해 그 차이를 경험해 보십시오. 당신의 소중한 보금자리를 위한 현명한 선택이 될 것입니다.",
+                "수많은 업체 중에서도 단연 돋보이는 경쟁력과 친절함으로 무장했습니다. 후회 없는 선택, 기분 좋은 마무리. 이 모든 것을 약속드립니다. 자세한 견적과 서비스 내용은 상세 페이지에서 확인 가능합니다.",
+                "새 집에서의 첫날밤이 피곤함이 아닌 편안함으로 기억될 수 있도록 최선을 다하겠습니다. 지금 바로 상세 정보를 확인하시고, 스마트한 이사를 준비해보세요. 당신의 행복한 이사를 응원합니다."
+            ]
+        };
+
+        function generateDescription(keyword) {
+            const r = (arr) => arr[Math.floor(Math.random() * arr.length)];
+            
+            // 키워드를 자연스럽게 문장에 녹여내기
+            const specificMention = ` 특히 **'${keyword}'** 관련하여 궁금하셨던 모든 정보를 체계적으로 정리해 두었습니다. `;
+            
+            // 500자 이상을 맞추기 위해 문단을 풍성하게 조합
+            let text = "";
+            text += r(textGenerator.intros) + "\n\n";
+            text += r(textGenerator.bodies); 
+            text += specificMention;
+            text += r(textGenerator.bodies); // 내용을 풍부하게 하기 위해 다른 바디 추가
+            text += "\n\n";
+            text += r(textGenerator.details);
+            text += r(textGenerator.details); // 디테일 추가
+            text += "\n\n";
+            text += r(textGenerator.outros);
+
+            return text;
+        }
+
+        // 3. 유틸리티 함수
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        // 4. 메인 로직
+        function init() {
+            const app = document.getElementById('app');
+            
+            // 전체 데이터 셔플
+            let shuffledData = shuffleArray([...rawData]);
+
+            // 10~20개 랜덤 선택
+            const count = Math.floor(Math.random() * (20 - 10 + 1)) + 10;
+            const selectedData = shuffledData.slice(0, count);
+
+            // 카테고리별 그룹화
+            const grouped = {};
+            selectedData.forEach(item => {
+                if (!grouped[item.c]) grouped[item.c] = [];
+                grouped[item.c].push(item);
+            });
+
+            // 카테고리 순서도 랜덤하게 섞기
+            const categories = shuffleArray(Object.keys(grouped));
+
+            // DOM 생성
+            categories.forEach(catKey => {
+                const section = document.createElement('section');
+                section.className = 'category-section';
+
+                // 카테고리 제목
+                const title = document.createElement('h2');
+                title.className = 'category-title';
+                title.textContent = categoryNames[catKey];
+                section.appendChild(title);
+
+                // Masonry 그리드 컨테이너
+                const grid = document.createElement('div');
+                grid.className = 'masonry-grid';
+
+                // 카드 아이템 생성
+                grouped[catKey].forEach(item => {
+                    const card = document.createElement('article');
+                    card.className = 'card';
+
+                    // 장식 아이콘 (이모지 랜덤)
+                    const icons = ['🚚', '📦', '🏠', '✨', '🔑', '📅', '💼'];
+                    const icon = document.createElement('div');
+                    icon.className = 'deco-icon';
+                    icon.textContent = icons[Math.floor(Math.random() * icons.length)];
+                    card.appendChild(icon);
+
+                    // 설명글 생성
+                    const descText = generateDescription(item.k);
+
+                    // HTML 구조 조립
+                    card.innerHTML += `
+                        <div class="card-content">
+                            <span class="card-tag">#${item.k}</span>
+                            <h3>${item.k} 전문 솔루션</h3>
+                            <a href="${item.u}" target="_blank" class="card-link" title="새 탭에서 자세히 보기">
+                                <div class="card-desc">
+                                    ${descText}
+                                    <span class="read-more">상세 내용 확인하기 ➜</span>
+                                </div>
+                            </a>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                });
+
+                section.appendChild(grid);
+                app.appendChild(section);
+            });
+        }
+
+        // 실행
+        init();
+
+    </script>
+
+<footer style="font-size: 11px; color: #888; padding: 30px 20px; text-align: center; line-height: 1.8; font-family: sans-serif;">
+  <div style="margin-bottom: 8px;">
+    © 2026. <span id="site-title"></span>. All rights reserved.
+  </div>
+
+  <div style="color: #ccc;">
+    <span id="bot-msg">데이터 동기화 중...</span> | 
+    최종 업데이트: <time id="bot-date" datetime=""></time>
+  </div>
+</footer>
+
+<script>
+  (function() {
+    // 1. 사이트 타이틀 자동 삽입 (요청하신 코드 추가됨)
+    const siteTitleElem = document.getElementById('site-title');
+    if (siteTitleElem) {
+      siteTitleElem.textContent = document.title || "My Website"; 
+    }
+
+    // 2. 날짜 및 시간 설정
+    const d = new Date();
+    const year = d.getFullYear();
+    const month = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
+    const formattedDate = `${year}-${month}-${day}`;
+    const fullISO = `${formattedDate}T09:00:00+09:00`;
+
+    const dateElem = document.getElementById('bot-date');
+    const msgElem = document.getElementById('bot-msg');
+
+    if(dateElem) {
+      dateElem.textContent = formattedDate;
+      dateElem.setAttribute('datetime', formattedDate); 
+    }
+
+    // 3. 동적 상태 메시지
+    if(msgElem) {
+      const msgs = ["정보 유효성 검토 완료", "실시간 데이터 업데이트됨", "최신 가이드라인 준수", "콘텐츠 정기 점검 완료", "시스템 정보 동기화 완료"];
+      msgElem.textContent = msgs[d.getDate() % msgs.length];
+    }
+
+    // 4. SEO 최적화 (JSON-LD)
+    const jsonLd = {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "dateModified": fullISO,
+      "mainEntityOfPage": { "@type": "WebPage", "@id": window.location.href }
+    };
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(jsonLd);
+    document.head.appendChild(script);
+
+    // 5. 메타 태그 업데이트
+    const metaData = [
+      { name: "revised", content: formattedDate },
+      { property: "article:modified_time", content: fullISO }
+    ];
+    metaData.forEach(data => {
+      const meta = document.createElement('meta');
+      if (data.name) meta.name = data.name;
+      if (data.property) meta.setAttribute('property', data.property);
+      meta.content = data.content;
+      document.head.appendChild(meta);
+    });
+  })();
+</script>
+
+    
 </body>
 </html>
-
-
